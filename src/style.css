@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-secondary: #10b981;
+  --color-secondary-dark: #059669;
+  
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-surface: var(--surface);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --background: #f9fafb;
+  --background-secondary: #d7e3f0;
+  --surface: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+  --primary: #4499e3;
+  --primary-light: #ade8f4;
+  --primary-dark: #0b86df;
+
+}
+
+.dark {
+  --background: #111827;
+  --background-secondary: #050d1d;
+  --surface: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --border: #374151;
+  --primary: #4499e3;
+  --primary-light: #ade8f4;
+  --primary-dark: #0b86df;
+}
+
+body {
+  @apply bg-background text-text-primary font-sans antialiased transition-colors duration-300;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  opacity: 0.3;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+  opacity: 0.5;
+}
+
+/* Utility Classes */
+.glass-card {
+  @apply bg-surface/80 backdrop-blur-md border border-border/50 shadow-sm transition-all duration-300;
+}
+
+.glass-input {
+  @apply bg-surface/50 border border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200 font-medium cursor-pointer;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary-dark transition-colors duration-200 font-medium cursor-pointer;
+}
+
+.btn-outline {
+  @apply border border-border text-text-primary px-4 py-2 rounded-lg hover:bg-surface/10 transition-colors duration-200 font-medium cursor-pointer;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass-card {
+    @apply p-4;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    @apply w-full;
+  }
+}
