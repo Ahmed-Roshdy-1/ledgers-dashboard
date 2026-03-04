@@ -19,14 +19,15 @@
   --font-mono: 'JetBrains Mono', monospace;
   
 
-  --breakpoint-2xs: 375px;
+  --breakpoint-2xs: 400px;
   --breakpoint-xs: 480px;
   --breakpoint-sm: 750px;
+  --breakpoint-2sm: 900px;
 
 }
 
 :root {
-  --background: #f9fafb;
+  --background: #fff;
   --background-secondary: #d7e3f0;
   --surface: #ffffff;
   --text-primary: #111827;
