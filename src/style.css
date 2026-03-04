@@ -76,31 +76,6 @@ body {
   opacity: 0.5;
 }
 
-/* Utility Classes */
-.glass-card {
-  @apply bg-surface/80 backdrop-blur-md border border-border/50 shadow-sm transition-all duration-300;
-}
-
-.glass-input {
-  @apply bg-surface/50 border border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200;
-}
-
-.btn-primary {
-  @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200 font-medium cursor-pointer;
-}
-
-.btn-secondary {
-  @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary-dark transition-colors duration-200 font-medium cursor-pointer;
-}
-
-.btn-outline {
-  @apply border border-border text-text-primary px-4 py-2 rounded-lg hover:bg-surface/10 transition-colors duration-200 font-medium cursor-pointer;
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary;
-}
-
 /* Animations */
 @keyframes slideIn {
   from {

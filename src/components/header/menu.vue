@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import AppsIcon from '../svg/AppsIcon.vue'
+import HamburgerIcon from '../svg/HamburgerIcon.vue'
 
 const emit = defineEmits<{
   (e: 'update:tab', tab: string): void
@@ -16,7 +18,6 @@ watch(activeIndex, (i) => {
 function setActive(i: number) {
   activeIndex.value = i
 }
-
 </script>
 
 <template>
@@ -27,12 +28,7 @@ function setActive(i: number) {
       <div class="flex items-center gap-2">
         <button aria-label="Open apps"
           class="hidden xs:flex shrink-0 items-center justify-center w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-surface shadow-md hover:shadow-lg transition cursor-pointer p-1.5">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="text-primary">
-            <rect x="3" y="3" width="7" height="9" />
-            <rect x="14" y="3" width="7" height="5" />
-            <rect x="14" y="12" width="7" height="9" />
-            <rect x="3" y="16" width="7" height="5" />
-          </svg>
+          <AppsIcon class-name="text-primary" />
         </button>
 
         <!-- CENTER: tabs -->
@@ -59,13 +55,8 @@ function setActive(i: number) {
           Sep 25
         </div>
         <button aria-label="Open menu"
-          class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-primary shadow-md hover:shadow-lg transition cursor-pointer shadow-md">
-          <svg width="16" height="12" class="sm:w-[18px] sm:h-[14px]" viewBox="0 0 18 14" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" y="1" width="18" height="2" rx="1" fill="white" />
-            <rect x="0" y="6" width="18" height="2" rx="1" fill="white" />
-            <rect x="0" y="11" width="18" height="2" rx="1" fill="white" />
-          </svg>
+          class="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-primary hover:shadow-lg transition cursor-pointer shadow-md">
+          <HamburgerIcon class-name="w-4 h-3 sm:w-[18px] sm:h-[14px]" />
         </button>
       </div>
     </div>
