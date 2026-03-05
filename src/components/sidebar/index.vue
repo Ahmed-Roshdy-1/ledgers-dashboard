@@ -7,6 +7,15 @@ import ActivityIcon from '../svg/ActivityIcon.vue';
 import HrIcon from '../svg/HrIcon.vue';
 import SettingsIcon from '../svg/SettingsIcon.vue';
 
+const props = defineProps({
+    isOpen: {
+        type: Boolean,
+        default: false
+    }
+})
+
+const emit = defineEmits(['close'])
+
 const activeIdx = ref(0)
 
 const navIcons = [
@@ -34,21 +43,36 @@ const navIcons = [
 </script>
 
 <template>
-    <aside class="w-15 hidden sm:flex flex-col items-center justify-between gap-2 py-5">
-        <img src="/logo.png" alt="logo" class="w-12 h-12 rounded-lg">
-        <nav class="flex-1 flex items-center justify-center max-h-9/12">
-            <ul class="flex flex-col items-center justify-center gap-2">
+    <!-- Mobile Backdrop -->
+    <div v-if="isOpen" class="fixed inset-0 bg-black/50 z-40 sm:hidden transition-opacity duration-300"
+        @click="emit('close')"></div>
+
+    <!-- Sidebar -->
+    <aside
+        class="fixed sm:relative top-0 left-0 h-full sm:h-auto w-[64px] sm:w-16 flex flex-col items-center justify-between gap-4 py-6 bg-surface sm:bg-transparent z-50 transition-transform duration-300 sm:translate-x-0 sm:flex"
+        :class="isOpen ? 'translate-x-0' : '-translate-x-full'">
+        <div class="flex flex-col items-center gap-6">
+            <img src="/logo.png" alt="logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-lg">
+
+        </div>
+
+        <nav class="flex-1 flex flex-col items-center justify-center w-full">
+            <ul class="flex flex-col items-center gap-4">
                 <li v-for="(item, idx) in navIcons" :key="idx">
-                    <button class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
+                    <button
+                        class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center transition-all duration-300"
                         :class="activeIdx === idx
-                            ? 'bg-primary text-white shadow-md'
-                            : 'text-text-primary hover:text-text-secondary hover:bg-primary/10'
+                            ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                            : 'text-text-secondary hover:text-primary hover:bg-primary/5'
                             " :aria-label="item.label" @click="activeIdx = idx">
                         <component :is="item.component" class-name="w-5 h-5 sm:w-6 sm:h-6" />
                     </button>
                 </li>
             </ul>
         </nav>
-        <ThemeToggle />
+
+        <div class="pb-2">
+            <ThemeToggle />
+        </div>
     </aside>
 </template>

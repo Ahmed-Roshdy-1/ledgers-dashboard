@@ -34,3 +34,55 @@ export const getRevenueExpensesData = (primaryColor: string, secondaryColor: str
     }
   ]
 })
+
+export const getProfitLossData = () => ({
+  labels: ['', '', '', '', '', '', '', '', '', '', ''],
+  datasets: [
+    {
+      label: 'Profit/Loss',
+      data: [-10, -20, -15,-15, 12, 10, 25, 30, 45, 40, 50, 60],
+      fill: true,
+      tension: 0.4,
+      pointBackgroundColor: '#0b86df',
+      pointBorderColor: '#0b86df',
+      pointBorderWidth: 2,
+      pointRadius: 4,
+      pointHoverRadius: 6,
+      borderColor: '',
+      borderWidth: 0,
+      backgroundColor: '' as any
+    }
+  ]
+})
+
+
+export const getGoalCompletionData = (pinkColor: string, blueColor: string) => ({
+  labels: [' Rev', ' OpEx'],
+  datasets: [
+    {
+      label: 'Progress',
+      data: [35, 15],
+      backgroundColor: pinkColor,
+      borderRadius: {
+        topLeft: 10,
+        bottomLeft: 10,
+        topRight: 0,
+        bottomRight: 0
+      },
+      barThickness: 35
+    },
+    {
+      label: 'Target',
+      data: [65, 45],
+      backgroundColor: blueColor,
+      borderRadius: {
+        topLeft: 0,
+        bottomLeft: 0,
+        topRight: 10,
+        bottomRight: 10
+      },
+      barThickness: 35
+    }
+  ]
+})
+

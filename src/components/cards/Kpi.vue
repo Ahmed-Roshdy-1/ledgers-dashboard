@@ -1,7 +1,7 @@
 <template>
     <div
         class="kpi-card bg-background rounded-2xl px-4 py-3.5 shadow-card cursor-pointer fade-up border border-border shadow-md shadow-primary/20">
-        <p class="text-xs text-text-secondary font-medium mb-1 truncate">{{ kpi.label }}</p>
+        <p class="text-[10px] text-text-primary font-semibold mb-1 truncate">{{ kpi.label }}</p>
 
         <!-- Runway card: dual values -->
         <template v-if="kpi.isRunway">
@@ -24,7 +24,7 @@
         <!-- Standard KPI card -->
         <template v-else>
             <p class="text-xl font-bold text-text-primary  leading-tight">{{ kpi.value }}</p>
-            <div class="flex items-center gap-1.5 mt-1 flex-wrap">
+            <div class="flex items-center gap-1.5 flex-wrap">
                 <span v-if="kpi.change" :class="[
                     'text-xs font-semibold px-1.5 rounded-md ml-auto',
                     kpi.positive
@@ -33,7 +33,7 @@
                 ]">
                     {{ kpi.change }}
                 </span>
-                <span class="text-[10px] text-text-secondary">vs previous month</span>
+                <span class="text-[10px] text-text-secondary mt-1">vs previous month</span>
             </div>
         </template>
     </div>
