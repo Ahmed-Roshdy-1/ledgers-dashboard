@@ -14,3 +14,23 @@ export const kpis = [
     valueNet: '6.5',
   },
 ]
+
+export const getRevenueExpensesData = (primaryColor: string, secondaryColor: string) => ({
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  datasets: [
+    {
+      label: 'Revenue',
+      data: [180, 620, 700, 520, 240, 190, 300, 260, 380, 650, 900, 820],
+      backgroundColor: primaryColor,
+      borderRadius: 10,
+      barThickness: 18
+    },
+    {
+      label: 'Expenses',
+      data: [580, 640, 780, 700, 690, 420, 540, 600, 700, 780, 880, 740],
+      backgroundColor: secondaryColor,
+      borderRadius: 10,
+      barThickness: 18
+    }
+  ]
+})

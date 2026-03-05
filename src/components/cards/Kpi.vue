@@ -5,19 +5,18 @@
 
         <!-- Runway card: dual values -->
         <template v-if="kpi.isRunway">
-            <div class="flex items-baseline gap-3 mt-1">
+            <div class="flex items-center gap-6 mt-6">
                 <div>
-                    <span class="text-lg font-bold text-text-primary leading-tight">
+                    <span class="text-lg font-bold text-text-primary leading-tight py-4">
                         {{ kpi.valueGross }}
                     </span>
-                    <p class="text-[10px] text-text-secondary mt-0.5">Gross</p>
+                    <p class="text-[10px] text-text-secondary mt-2">Gross</p>
                 </div>
-                <div class="w-px h-8 bg-text-secondary shrink-0" />
                 <div>
                     <span class="text-lg font-bold text-text-primary leading-tight">
                         {{ kpi.valueNet }}
                     </span>
-                    <p class="text-[10px] text-text-secondary mt-0.5">Net</p>
+                    <p class="text-[10px] text-text-secondary mt-2">Net</p>
                 </div>
             </div>
         </template>
@@ -40,7 +39,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
     kpi: {
         type: Object,

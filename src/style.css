@@ -15,6 +15,9 @@
   --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
   
+  --color-chart-grid: var(--chart-grid);
+  --color-chart-tooltip-bg: var(--chart-tooltip-bg);
+  
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   
@@ -36,7 +39,8 @@
   --primary: #4499e3;
   --primary-light: #ade8f4;
   --primary-dark: #0b86df;
-
+  --chart-grid: #ffffff10;
+  --chart-tooltip-bg: rgba(255, 255, 255, 0.9);
 }
 
 .dark {
@@ -49,6 +53,8 @@
   --primary: #4499e3;
   --primary-light: #ade8f4;
   --primary-dark: #0b86df;
+  --chart-grid: rgba(255, 255, 255, 0.1);
+  --chart-tooltip-bg: rgba(31, 41, 55, 0.9);
 }
 
 body {

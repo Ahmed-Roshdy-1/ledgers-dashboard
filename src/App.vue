@@ -5,6 +5,7 @@ import AppTitle from './components/AppTitle.vue';
 import AppSidebar from './components/sidebar/index.vue';
 import { useTheme, kpis } from '@/composables';
 import KpiCard from './components/cards/Kpi.vue';
+import RevenueExpensesChart from './components/charts/RevenueExpensesChart.vue';
 
 const { initTheme } = useTheme();
 
@@ -26,6 +27,13 @@ onMounted(() => {
         <div class="flex-1 flex flex-col gap-4">
           <section class="grid gap-3 grid-cols-[repeat(auto-fill,minmax(130px,1fr))]">
             <KpiCard v-for="kpi in kpis" :key="kpi.label" :kpi="kpi" />
+          </section>
+          <section class="grid gap-3 grid-cols-[repeat(auto-fill,minmax(130px,1fr))] grid-rows-[repeat(auto-fill,minmax(250px,1fr))]">
+            <div class="col-span-4">
+              <RevenueExpensesChart />
+            </div>
+            <div class="col-span-3 bg-background h-full border rounded-xl">
+            </div>
           </section>
         </div>
 
