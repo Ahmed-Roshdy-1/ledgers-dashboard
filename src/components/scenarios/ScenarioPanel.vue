@@ -43,7 +43,7 @@ const getPercentage = (value: number) => {
       <!-- Output Snapshot -->
       <div
         class="bg-primary rounded-[20px] rounded-t-[2px] p-2 lg:py-3 lg:px-2 overflow-hidden shadow-lg shadow-primary/20">
-        <div class="grid grid-cols-4 text-[10px] text-background-secondary font-bold uppercase tracking-widest mb-3">
+        <div class="grid grid-cols-4 text-[10px] text-background font-bold uppercase tracking-widest mb-3">
           <div class="text-center">Output Snapshot:</div>
           <div class="text-center">Current</div>
           <div class="text-center">Adjusted</div>
@@ -55,7 +55,7 @@ const getPercentage = (value: number) => {
             <div class="font-bold whitespace-nowrap">{{ row.label }}:</div>
             <div class="text-center tabular-nums">{{ row.current }}</div>
             <div class="text-center tabular-nums">{{ row.adjusted }}</div>
-            <div class="text-center tabular-nums opacity-80 text-background-secondary">{{ row.changes }}</div>
+            <div class="text-center tabular-nums opacity-80 text-background">{{ row.changes }}</div>
           </div>
         </div>
       </div>
@@ -63,7 +63,8 @@ const getPercentage = (value: number) => {
       <!-- AI Section -->
       <div class="mt-4 flex flex-col items-center">
         <h4 class="text-[11px] font-bold mb-1 flex items-center gap-1">
-          <span class="bg-linear-to-r from-primary to-violet-400 text-transparent bg-clip-text font-bold">Ledgers AI</span>
+          <span class="bg-linear-to-r from-primary to-violet-400 text-transparent bg-clip-text font-bold">Ledgers
+            AI</span>
         </h4>
         <p class="text-[10px] leading-tight text-text-secondary text-center italic max-w-[95%] mx-auto">
           "These adjustments show how changes in revenue, costs, and spending can influence your profit.
@@ -77,11 +78,13 @@ const getPercentage = (value: number) => {
       class="flex justify-center -my-1 z-10 py-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-1 w-full pointer-events-none">
       <!-- Background decorative line -->
       <div class="absolute top-1/2 left-0 right-0 h-[1.5px] bg-primary dark:bg-primary/40 -translate-y-1/2 z-0"></div>
-      
+
       <button
         class="bg-background px-8 py-2.5 rounded-full border border-border flex items-center gap-3 cursor-pointer hover:scale-105 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.25)] active:scale-95 transition-all duration-300 group overflow-hidden relative pointer-events-auto">
-        <span class="bg-linear-to-r from-primary to-violet-400 bg-clip-text text-transparent font-black text-base tracking-tight relative z-10">Generate</span>
-        <SparkleIcon class-name="w-6 h-6 relative z-10 group-hover:scale-110 group-hover:rotate-[15deg] transition-all duration-500" />
+        <span
+          class="bg-linear-to-r from-primary to-violet-400 bg-clip-text text-transparent font-black text-base tracking-tight relative z-10">Generate</span>
+        <SparkleIcon
+          class-name="w-6 h-6 relative z-10 group-hover:scale-110 group-hover:rotate-[15deg] transition-all duration-500" />
       </button>
     </div>
 
@@ -110,8 +113,7 @@ const getPercentage = (value: number) => {
       <!-- Output Snapshot -->
       <div
         class="bg-primary rounded-[20px] rounded-t-[2px] p-2 lg:py-3 lg:px-2 overflow-hidden shadow-lg shadow-primary/20">
-        <div
-          class="grid grid-cols-4 text-[10px] font-bold text-background-secondary uppercase tracking-widest opacity-80 mb-3">
+        <div class="grid grid-cols-4 text-[10px] font-bold text-background uppercase tracking-widest opacity-80 mb-3">
           <div class="text-center">Output Snapshot:</div>
           <div class="text-center">Current</div>
           <div class="text-center">Adjusted</div>
@@ -123,7 +125,7 @@ const getPercentage = (value: number) => {
             <div class="font-bold whitespace-nowrap">{{ row.label }}</div>
             <div class="text-center tabular-nums">{{ row.current }}</div>
             <div class="text-center tabular-nums">{{ row.adjusted }}</div>
-            <div class="text-center tabular-nums  text-background-secondary">{{ row.changes }}</div>
+            <div class="text-center tabular-nums  text-background">{{ row.changes }}</div>
           </div>
         </div>
       </div>
@@ -131,7 +133,8 @@ const getPercentage = (value: number) => {
       <!-- AI Section -->
       <div class="mt-4 flex flex-col items-center">
         <h4 class="text-[11px] font-bold mb-1 flex items-center gap-1">
-          <span class="bg-linear-to-r from-primary to-violet-400 text-transparent bg-clip-text font-bold">Ledgers AI</span>
+          <span class="bg-linear-to-r from-primary to-violet-400 text-transparent bg-clip-text font-bold">Ledgers
+            AI</span>
         </h4>
         <p class="text-[10px] leading-tight text-text-secondary text-center italic max-w-[95%] mx-auto">
           "Adjusting inflow, outflow, and payment timing helps you see how your cash balance may shift month to month.

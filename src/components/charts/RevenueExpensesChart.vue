@@ -31,16 +31,16 @@ const chartData = computed(() => {
   isDark.value
   const primary = resolveColor('--color-primary-dark')
   const secondary = resolveColor('--color-secondary')
-  
+
   const data = getRevenueExpensesData(primary, secondary)
-  
+
   // Determine thickness based on screen width
   const thickness = windowWidth.value < 640 ? 8 : (windowWidth.value < 1024 ? 12 : 18)
-  
+
   data.datasets.forEach(dataset => {
     dataset.barThickness = thickness
   })
-  
+
   return data
 })
 
@@ -102,7 +102,8 @@ const chartOptions = computed(() => {
       <span>Revenue vs Expenses</span>
       <!-- svg -->
       <svg width="18" height="18" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-1">
-        <path d="M10 4L6 8L2 4" stroke="currentColor" class="text-text-primary" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 4L6 8L2 4" stroke="currentColor" class="text-text-primary" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </div>
 

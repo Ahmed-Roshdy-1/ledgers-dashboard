@@ -30,16 +30,16 @@ const chartData = computed(() => {
   // Colors as defined in tailwind theme
   const pink = resolveColor('--color-secondary')
   const blue = resolveColor('--color-primary')
-  
+
   const data = getGoalCompletionData(pink, blue)
-  
+
   // Responsive bar thickness for horizontal bars
   const thickness = windowWidth.value < 640 ? 20 : 35
-  
+
   data.datasets.forEach(ds => {
     ds.barThickness = thickness
   })
-  
+
   return data
 })
 
@@ -67,8 +67,8 @@ const chartOptions = computed(() => {
       },
       y: {
         stacked: true,
-        grid: { 
-            display: false,
+        grid: {
+          display: false,
         },
         ticks: {
           color: textColor,

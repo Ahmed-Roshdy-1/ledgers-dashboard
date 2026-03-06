@@ -77,7 +77,7 @@ onMounted(() => {
 
         <!-- right side - Activity/Details panel -->
         <div
-          class="w-full xl:w-[400px] 2xl:w-[600px] shrink-0 bg-primary rounded-[20px] lg:rounded-bl-none p-4 lg:p-6 border border-border shadow-lg shadow-primary/20 xl:sticky xl:top-6 overflow-y-auto no-scrollbar">
+          class="w-full xl:w-[400px] 2xl:w-[600px] shrink-0 bg-primary rounded-[20px] lg:rounded-bl-none p-4 lg:p-4 border border-border shadow-lg shadow-primary/20 xl:sticky xl:top-6 overflow-y-auto no-scrollbar">
           <div class="flex flex-col h-full">
             <ScenarioPanel />
           </div>

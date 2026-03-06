@@ -18,37 +18,37 @@ const chartData = computed(() => {
   const primaryColor = resolveColor('--color-primary') || '#4499e3'
   const secondaryColor = resolveColor('--color-secondary') || '#ff5a91'
   const surfaceColor = resolveColor('--color-surface') || '#ffffff'
-  
+
   if (data.datasets && data.datasets[0]) {
     data.datasets[0].borderColor = surfaceColor
     data.datasets[0].borderWidth = 2
-    
+
     data.datasets[0].backgroundColor = (context: any) => {
       const chart = context.chart;
-      const {ctx, chartArea, scales} = chart;
+      const { ctx, chartArea, scales } = chart;
 
       if (!chartArea) {
         return null;
       }
-      
+
       const yScale = scales.y;
       const zeroPos = yScale.getPixelForValue(0);
       const top = chartArea.top;
       const bottom = chartArea.bottom;
-      
+
       // Calculate normalized position of 0 (0 to 1, bottom to top)
       const zeroPercentage = Math.max(0, Math.min(1, (bottom - zeroPos) / (bottom - top)));
-      
+
       const gradient = ctx.createLinearGradient(0, bottom, 0, top);
-      
+
       // Below zero: Secondary color (Loss)
-      gradient.addColorStop(0, `${secondaryColor}66`); 
+      gradient.addColorStop(0, `${secondaryColor}66`);
       gradient.addColorStop(zeroPercentage, `${secondaryColor}1a`);
-      
+
       // Above zero: Primary color (Profit)
       gradient.addColorStop(zeroPercentage, `${primaryColor}1a`);
       gradient.addColorStop(1, `${primaryColor}99`);
-      
+
       return gradient;
     };
   }
@@ -99,9 +99,9 @@ const chartOptions = computed(() => {
       }
     },
     elements: {
-        line: {
-            tension: 0.4
-        }
+      line: {
+        tension: 0.4
+      }
     }
   }
 })
@@ -112,13 +112,14 @@ const chartOptions = computed(() => {
     <!-- Header -->
     <div class="flex items-center justify-between mb-1">
       <h3 class="font-bold text-text-primary text-[11px] uppercase tracking-wider">
-        <span class="text-primary">Profit</span><span class="text-text-primary"> / </span><span class="text-secondary">Loss</span>
+        <span class="text-primary">Profit</span><span class="text-text-primary"> / </span><span
+          class="text-secondary">Loss</span>
       </h3>
     </div>
 
     <!-- Chart -->
     <div class="h-[105px]">
-      <Chart type="line" :data="chartData" :options="chartOptions" class="h-[105px]"/>
+      <Chart type="line" :data="chartData" :options="chartOptions" class="h-[105px]" />
     </div>
   </div>
 </template>
