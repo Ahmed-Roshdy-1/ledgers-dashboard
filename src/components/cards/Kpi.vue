@@ -5,7 +5,7 @@
 
         <!-- Runway card: dual values -->
         <template v-if="kpi.isRunway">
-            <div class="flex items-center gap-6 mt-6">
+            <div class="flex items-center gap-6 mt-3">
                 <div>
                     <span class="text-lg font-bold text-text-primary leading-tight py-4">
                         {{ kpi.valueGross }}

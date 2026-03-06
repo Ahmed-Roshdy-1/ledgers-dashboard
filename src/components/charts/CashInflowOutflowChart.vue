@@ -131,7 +131,7 @@ const plugins = [{
   <div class="bg-background rounded-[24px] p-3 border border-border shadow-sm h-[300px] flex flex-col overflow-hidden">
     <!-- Header -->
     <div class="mb-1">
-      <h3 class="font-bold text-text-primary text-[11px] uppercase tracking-wider opacity-80">Cash Inflow vs outflow
+      <h3 class="font-bold text-text-primary text-[11px] uppercase tracking-wider">Cash Inflow vs outflow
       </h3>
     </div>
 

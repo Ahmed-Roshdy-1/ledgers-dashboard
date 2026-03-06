@@ -51,7 +51,7 @@ function setActive(i: number) {
       <!-- RIGHT: date + hamburger -->
       <div class="items-center gap-2 sm:gap-3 shrink-0 hidden xl:flex ml-12">
         <div
-          class="hidden xl:block rounded-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium bg-surface border border-border min-w-[60px] sm:min-w-[72px] text-center shadow-md">
+          class="hidden xl:block rounded-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium bg-surface text-text-secondary h border border-border min-w-[60px] sm:min-w-[72px] text-center shadow-md">
           Sep 25
         </div>
         <button aria-label="Open menu"

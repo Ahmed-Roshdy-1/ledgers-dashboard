@@ -49,7 +49,7 @@ const navIcons = [
 
     <!-- Sidebar -->
     <aside
-        class="fixed sm:relative top-0 left-0 h-full sm:h-auto w-[64px] sm:w-16 flex flex-col items-center justify-between gap-4 py-6 bg-surface sm:bg-transparent z-50 transition-transform duration-300 sm:translate-x-0 sm:flex"
+        class="fixed border-r border-border sm:border-none sm:sticky  top-0 sm:top-4 left-0 h-full sm:h-[calc(100vh-2rem)] w-[64px] sm:w-16 flex flex-col items-center justify-between gap-4 py-6 bg-surface sm:bg-transparent z-50 transition-transform duration-300 sm:translate-x-0 sm:flex overflow-y-auto no-scrollbar"
         :class="isOpen ? 'translate-x-0' : '-translate-x-full'">
         <div class="flex flex-col items-center gap-6">
             <img src="/logo.png" alt="logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-lg">

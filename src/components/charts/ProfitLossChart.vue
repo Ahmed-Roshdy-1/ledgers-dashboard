@@ -108,17 +108,17 @@ const chartOptions = computed(() => {
 </script>
 
 <template>
-  <div class="bg-background rounded-[20px] p-5 border border-border shadow-sm shadow-primary/20">
+  <div class="bg-background rounded-[20px] p-5 border border-border shadow-sm shadow-primary/20 h-[155px]">
     <!-- Header -->
     <div class="flex items-center justify-between mb-1">
-      <h3 class="font-bold text-lg">
+      <h3 class="font-bold text-text-primary text-[11px] uppercase tracking-wider">
         <span class="text-primary">Profit</span><span class="text-text-primary"> / </span><span class="text-secondary">Loss</span>
       </h3>
     </div>
 
     <!-- Chart -->
-    <div class="h-[80px]">
-      <Chart type="line" :data="chartData" :options="chartOptions" class="h-full" />
+    <div class="h-[105px]">
+      <Chart type="line" :data="chartData" :options="chartOptions" class="h-[105px]"/>
     </div>
   </div>
 </template>

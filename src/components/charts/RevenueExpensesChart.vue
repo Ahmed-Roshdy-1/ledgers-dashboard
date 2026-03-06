@@ -98,11 +98,11 @@ const chartOptions = computed(() => {
 <template>
   <div class="bg-background rounded-[20px] p-5 border border-border shadow-sm shadow-primary/20">
     <!-- Header -->
-    <div class="flex items-center justify-between mb-3 font-semibold text-text-primary">
+    <div class="flex items-center justify-start gap-2 mb-3 font-semibold text-text-primary">
       <span>Revenue vs Expenses</span>
       <!-- svg -->
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 4L6 8L2 4" stroke="currentColor" class="text-text-secondary" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg width="18" height="18" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-1">
+        <path d="M10 4L6 8L2 4" stroke="currentColor" class="text-text-primary" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
 

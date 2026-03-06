@@ -150,7 +150,7 @@ const plugins = [{
 
     <!-- Chart -->
     <div class="flex-1 relative">
-      <Chart type="line" :data="chartData" :options="chartOptions" :plugins="plugins" class="h-full" />
+      <Chart type="line" :data="chartData" :options="chartOptions" :plugins="plugins" class="h-[90px]" />
     </div>
   </div>
 </template>

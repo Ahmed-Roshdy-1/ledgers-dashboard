@@ -156,3 +156,30 @@ export const getNetFlowData = (blueColor: string) => ({
   ]
 })
 
+export const forecastSlidersData = [
+  { label: 'Revenue Growth', value: 40 },
+  { label: 'COS % of Revenue', value: 30 },
+  { label: 'OpEx Change', value: 85 },
+  { label: 'Seasonality', value: 65 },
+  { label: 'Pipeline Confidence', value: 75 },
+];
+
+export const cashFlowSlidersData = [
+  { label: 'Inflow Sensitivity', value: 20 },
+  { label: 'OpEx Tightening', value: 45 },
+  { label: 'Payment Terms', value: 80 },
+];
+
+export const forecastOutputData = [
+  { label: 'Gross Profit', current: '1,250,000', adjusted: '1,250,000', changes: '- /' },
+  { label: 'Net Profit', current: '650,000', adjusted: '650,000', changes: '- /' },
+  { label: 'OpEx', current: '600,000', adjusted: '600,000', changes: '- /' },
+  { label: 'Gross Margin', current: '52%', adjusted: '52%', changes: '- /' },
+];
+
+export const cashFlowOutputData = [
+  { label: 'Inflow', current: '1,420,000', adjusted: '1,420,000', changes: '- /' },
+  { label: 'Outflow', current: '540,000', adjusted: '540,000', changes: '- /' },
+  { label: 'Net Cash Flow', current: '880,000', adjusted: '880,000', changes: '- /' },
+  { label: 'Cash Balance', current: '58%', adjusted: '58%', changes: '- /' },
+];
