@@ -21,22 +21,27 @@ const activeIdx = ref(0)
 const navIcons = [
     {
         label: 'Dashboard',
+        route: 'home',
         component: markRaw(DashboardIcon),
     },
     {
         label: 'Layers',
+        route: 'sales',
         component: markRaw(LayersIcon),
     },
     {
         label: 'Activity',
+        route: 'activity',
         component: markRaw(ActivityIcon),
     },
     {
         label: 'HR',
+        route: 'hr',
         component: markRaw(HrIcon),
     },
     {
         label: 'Settings',
+        route: 'mgmt',
         component: markRaw(SettingsIcon),
     },
 ]
@@ -59,14 +64,15 @@ const navIcons = [
         <nav class="flex-1 flex flex-col items-center justify-center w-full">
             <ul class="flex flex-col items-center gap-4">
                 <li v-for="(item, idx) in navIcons" :key="idx">
-                    <button
+                    <router-link
+                        :to="{ name: item.route }"
                         class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center transition-all duration-300"
                         :class="activeIdx === idx
                             ? 'bg-primary text-white shadow-lg shadow-primary/30'
                             : 'text-text-secondary hover:text-primary hover:bg-primary/5'
                             " :aria-label="item.label" @click="activeIdx = idx">
                         <component :is="item.component" class-name="w-5 h-5 sm:w-6 sm:h-6" />
-                    </button>
+                    </router-link>
                 </li>
             </ul>
         </nav>
