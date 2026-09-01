@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ThemeToggle from '../header/ThemeToggle.vue';
-import { ref, markRaw } from 'vue'
+import { computed, markRaw } from 'vue'
+import { useRoute } from 'vue-router'
 import DashboardIcon from '../svg/DashboardIcon.vue';
 import LayersIcon from '../svg/LayersIcon.vue';
 import ActivityIcon from '../svg/ActivityIcon.vue';
@@ -16,7 +17,7 @@ const props = defineProps({
 
 const emit = defineEmits(['close'])
 
-const activeIdx = ref(0)
+const route = useRoute()
 
 const navIcons = [
     {
@@ -45,6 +46,8 @@ const navIcons = [
         component: markRaw(SettingsIcon),
     },
 ]
+
+const activeRoute = computed(() => route.name)
 </script>
 
 <template>
@@ -67,10 +70,10 @@ const navIcons = [
                     <router-link
                         :to="{ name: item.route }"
                         class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center transition-all duration-300"
-                        :class="activeIdx === idx
+                        :class="activeRoute === item.route
                             ? 'bg-primary text-white shadow-lg shadow-primary/30'
                             : 'text-text-secondary hover:text-primary hover:bg-primary/5'
-                            " :aria-label="item.label" @click="activeIdx = idx">
+                            " :aria-label="item.label" @click="emit('close')">
                         <component :is="item.component" class-name="w-5 h-5 sm:w-6 sm:h-6" />
                     </router-link>
                 </li>

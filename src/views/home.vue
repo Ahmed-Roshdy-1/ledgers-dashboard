@@ -17,8 +17,6 @@ import ScenarioPanel from '@/components/scenarios/ScenarioPanel.vue';
 
 <template>
 
-
-
   <div class="mt-4 sm:mt-6">
     <AppTitle />
   </div>
