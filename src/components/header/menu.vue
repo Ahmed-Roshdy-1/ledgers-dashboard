@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import AppsIcon from '../svg/AppsIcon.vue'
 import HamburgerIcon from '../svg/HamburgerIcon.vue'
 
@@ -7,17 +8,15 @@ const emit = defineEmits<{
   (e: 'update:tab', tab: string): void
 }>()
 
-const tabs: string[] = ['FINANCE', 'SALES', 'HR', 'MGMT']
-const activeIndex = ref(0)
-
-watch(activeIndex, (i) => {
-  const tab = tabs[i]
-  if (tab) emit('update:tab', tab)
-})
-
-function setActive(i: number) {
-  activeIndex.value = i
-}
+const tabs = [
+  { label: 'FINANCE', route: 'home' },
+  { label: 'SALES',   route: 'sales'   },
+  { label: 'ACTIVITY', route: 'activity' },
+  { label: 'HR',      route: 'hr'      },
+  { label: 'MGMT',    route: 'mgmt'    },
+]
+const route = useRoute()
+const activeRoute = computed(() => route.name)
 </script>
 
 <template>
@@ -34,15 +33,15 @@ function setActive(i: number) {
         <!-- CENTER: tabs -->
         <div class="flex rounded-full bg-surface/90 p-1 sm:p-1.5 shadow-lg whitespace-nowrap" role="tablist"
           aria-label="Main sections">
-          <template v-for="(tab, idx) in tabs" :key="tab">
-            <button role="tab" :aria-selected="activeIndex === idx" tabindex="0" @click="setActive(idx)"
+          <template v-for="tab in tabs" :key="tab.route">
+            <router-link :to="{ name: tab.route }" role="tab" :aria-selected="activeRoute === tab.route" tabindex="0"
               class="px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 focus:outline-none cursor-pointer"
-              :class="activeIndex === idx
+              :class="activeRoute === tab.route
                 ? 'bg-primary text-white shadow-md -translate-y-px'
                 : 'text-text-secondary hover:text-text-primary'
                 ">
-              {{ tab }}
-            </button>
+              {{ tab.label }}
+            </router-link>
           </template>
         </div>
       </div>
